@@ -61,38 +61,39 @@
   var year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
 
-  /* ---------- Aberto agora ---------- */
+  /* ---------- Chip do dia ---------- */
   (function renderToday() {
     var t = $("#today-text");
-    var now = new Date();
-    var dow = now.getDay();
-    var h = now.getHours() + now.getMinutes() / 60;
-    var open = dow === 0 ? 8 : 7;
-    var close = dow === 0 ? 12 : 19;
+    var dow = new Date().getDay();
     t.textContent = "";
-    if (h >= open && h < close) {
-      t.appendChild(el("b", "", "Aberto agora"));
-      t.appendChild(document.createTextNode(" · até às " + close + "h"));
+    if (dow === 6) {
+      t.appendChild(el("b", "", "Hoje tem feijoada"));
+      t.appendChild(document.createTextNode(" · 12h às 15h"));
+    } else if (dow >= 1 && dow <= 5) {
+      t.appendChild(el("b", "", "Almoço hoje"));
+      t.appendChild(document.createTextNode(" · 11h30 às 14h30"));
     } else {
-      t.appendChild(document.createTextNode("Segunda a sábado, 7h às 19h · domingo, 8h às 12h"));
+      t.appendChild(document.createTextNode("Sábado é dia de feijoada · 12h às 15h"));
     }
   })();
 
   /* ---------- Pedido (carrinho) ---------- */
   var basket = new Map();
   try {
-    JSON.parse(localStorage.getItem("lari-basket") || "[]").forEach(function (pair) {
+    JSON.parse(localStorage.getItem("casa-andina-basket") || "[]").forEach(function (pair) {
       if (byId[pair[0]] && pair[1] > 0) basket.set(pair[0], pair[1]);
     });
   } catch (e) { /* sem armazenamento: segue sem salvar */ }
 
   function persist() {
-    try { localStorage.setItem("lari-basket", JSON.stringify(Array.from(basket.entries()))); } catch (e) { /* ignora */ }
+    try { localStorage.setItem("casa-andina-basket", JSON.stringify(Array.from(basket.entries()))); } catch (e) { /* ignora */ }
   }
-  function stepOf(p) { return p.unit === "unidade" ? 1 : 0.5; }
+  function stepOf(p) { return p.step || (p.unit === "kg" ? 0.5 : 1); }
   function unitWord(p, q) {
     if (p.unit === "kg") return "kg";
     if (p.unit === "cento") return q > 1 ? "centos" : "cento";
+    if (p.unit === "pessoa") return q > 1 ? "pessoas" : "pessoa";
+    if (p.unit === "garrafa") return q > 1 ? "garrafas" : "garrafa";
     return q > 1 ? "unidades" : "unidade";
   }
   function unitShort(p) { return p.unit === "unidade" ? "unid." : p.unit; }
@@ -110,7 +111,7 @@
   var order = { date: "", notes: "" };
 
   function buildMessage() {
-    var lines = ["Olá, Lari! Gostaria de fazer um pedido:", ""];
+    var lines = ["Olá, Casa Andina! Gostaria de fazer um pedido:", ""];
     basket.forEach(function (q, id) {
       var p = byId[id];
       var price = p.price != null ? " (" + fmt(p.price) + "/" + unitShort(p) + ")" : " (sob consulta)";
@@ -156,7 +157,7 @@
   function addItem(id, origin) {
     var p = byId[id];
     var cur = basket.get(id) || 0;
-    basket.set(id, cur ? round2(cur + stepOf(p)) : 1);
+    basket.set(id, cur ? round2(cur + stepOf(p)) : (p.min || 1));
     persist();
     syncCounts(true);
     renderBasket();
@@ -169,7 +170,7 @@
   function changeItem(id, dir) {
     var p = byId[id];
     var next = round2((basket.get(id) || 0) + dir * stepOf(p));
-    if (next <= 0) basket.delete(id); else basket.set(id, next);
+    if (next <= 0 || (p.min && next < p.min)) basket.delete(id); else basket.set(id, next);
     persist();
     syncCounts(false);
     renderBasket();
@@ -482,6 +483,17 @@
 
   renderTabs();
   renderMenu();
+  $$("[data-cat]").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      state.cat = link.getAttribute("data-cat");
+      state.q = "";
+      searchInput.value = "";
+      renderTabs();
+      renderMenu();
+      $("#cardapio").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  });
   renderBasket();
   syncCounts(false);
 
@@ -522,7 +534,7 @@
   })();
 
   /* ---------- Granulado (canvas) ---------- */
-  var COLORS = ["#8a5443", "#c89a6a", "#e0c39b", "#6b3a20", "#d97b9a", "#f3dcae"];
+  var COLORS = ["#1d1a17", "#c8a47a", "#e1c9a6", "#8a5a33", "#8c8176", "#eadcc3"];
 
   function Field(canvas) {
     this.c = canvas;
@@ -591,7 +603,7 @@
   /* Fundo do hero: granulado caindo e fugindo do mouse */
   var bg = new Field($("#bg-sprinkles"));
   var smallScreen = window.matchMedia("(max-width: 700px)").matches;
-  var count = smallScreen ? 0 : 56;
+  var count = 0;
   for (var i = 0; i < count; i++) bg.p.push(makeSprinkle(bg.w, bg.h, true));
   bg.step = function () {
     var m = this.mouse;
@@ -678,7 +690,7 @@
   /* Inclinação da logo seguindo o mouse */
   var art = $(".hero-art");
   var card = $("#logo-card");
-  if (canHover && !reduceMotion) {
+  if (canHover && !reduceMotion && art && card) {
     art.addEventListener("pointermove", function (e) {
       var r = art.getBoundingClientRect();
       var nx = (e.clientX - r.left) / r.width - 0.5;
