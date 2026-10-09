@@ -293,10 +293,79 @@
     });
   }
 
+  /* Vitrine em loop: rola sozinha, o dedo (ou o mouse) move, e ao chegar no fim volta ao início */
+  var railLoop = { pause: function () {}, resumeLater: function () {} };
+  (function () {
+    var cards = $$(".fcard", rail);
+    var n = cards.length;
+    if (!n) return;
+    for (var k = 0; k < 2; k++) {
+      cards.forEach(function (c) {
+        var cl = c.cloneNode(true);
+        cl.setAttribute("aria-hidden", "true");
+        $$("button, a", cl).forEach(function (x) { x.tabIndex = -1; });
+        rail.appendChild(cl);
+      });
+    }
+    var setW = 0, pos = 0, last = 0, paused = false, touching = false, inView = true, timer = null;
+    var SPEED = 38; // px por segundo
+
+    function measure() {
+      var all = $$(".fcard", rail);
+      setW = all[n].offsetLeft - all[0].offsetLeft;
+    }
+    function wrap() {
+      if (!setW) return;
+      var sl = rail.scrollLeft;
+      if (sl >= 2 * setW) { rail.scrollLeft = sl - setW; pos = rail.scrollLeft; }
+      else if (sl < setW) { rail.scrollLeft = sl + setW; pos = rail.scrollLeft; }
+    }
+    function pause() { paused = true; clearTimeout(timer); }
+    function resumeLater(ms) {
+      clearTimeout(timer);
+      timer = setTimeout(function () { pos = rail.scrollLeft; paused = false; }, ms);
+    }
+    railLoop.pause = pause;
+    railLoop.resumeLater = resumeLater;
+
+    function tick(t) {
+      var dt = Math.min(t - last, 64);
+      last = t;
+      if (!paused && !touching && inView && !document.hidden && !reduceMotion && setW) {
+        pos += (SPEED * dt) / 1000;
+        rail.scrollLeft = pos;
+      }
+      if (!touching) wrap();
+      requestAnimationFrame(tick);
+    }
+
+    measure();
+    rail.scrollLeft = setW;
+    pos = rail.scrollLeft;
+    window.addEventListener("resize", function () { var r = rail.scrollLeft - setW; measure(); rail.scrollLeft = setW + r; pos = rail.scrollLeft; });
+    window.addEventListener("load", function () { var r = rail.scrollLeft - setW; measure(); rail.scrollLeft = setW + r; pos = rail.scrollLeft; });
+
+    rail.addEventListener("mouseenter", pause);
+    rail.addEventListener("mouseleave", function () { resumeLater(300); });
+    rail.addEventListener("touchstart", function () { touching = true; pause(); }, { passive: true });
+    rail.addEventListener("touchend", function () { touching = false; resumeLater(1800); }, { passive: true });
+    rail.addEventListener("touchcancel", function () { touching = false; resumeLater(1800); }, { passive: true });
+    rail.addEventListener("wheel", function () { pause(); resumeLater(1500); }, { passive: true });
+    rail.addEventListener("focusin", pause);
+    rail.addEventListener("focusout", function () { resumeLater(600); });
+
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) { inView = entries[0].isIntersecting; }, { threshold: 0.05 }).observe(rail);
+    }
+    requestAnimationFrame(function (t) { last = t; requestAnimationFrame(tick); });
+  })();
+
   function scrollRail(dir) {
     var card = $(".fcard", rail);
     var w = card ? card.offsetWidth + 24 : 300;
+    railLoop.pause();
     rail.scrollBy({ left: dir * w * 2, behavior: reduceMotion ? "auto" : "smooth" });
+    railLoop.resumeLater(2500);
   }
   $("#rail-prev").addEventListener("click", function () { scrollRail(-1); });
   $("#rail-next").addEventListener("click", function () { scrollRail(1); });
