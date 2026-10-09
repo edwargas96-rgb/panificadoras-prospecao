@@ -21,6 +21,7 @@
   </script>
   <script defer src="data.js"></script>
   <script defer src="app.js"></script>
+  <script defer src="stories.js"></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -94,6 +95,13 @@
   <div class="ribbon" aria-hidden="true">
     <div class="ribbon-track"><div class="ribbon-group"><span>Pães</span><svg><use href="#i-heart"/></svg><span>Doces</span><svg><use href="#i-heart"/></svg><span>Desde 1994</span><svg><use href="#i-heart"/></svg><span>Os melhores produtos todos os dias</span><svg><use href="#i-heart"/></svg></div><div class="ribbon-group"><span>Pães</span><svg><use href="#i-heart"/></svg><span>Doces</span><svg><use href="#i-heart"/></svg><span>Desde 1994</span><svg><use href="#i-heart"/></svg><span>Os melhores produtos todos os dias</span><svg><use href="#i-heart"/></svg></div></div>
   </div>
+
+  <section class="hl-section" id="destaques-ig" aria-label="Destaques">
+    <div class="container">
+      <p class="eyebrow">Destaques</p>
+      <div class="hl-row" id="hl-row"></div>
+    </div>
+  </section>
 
   <section class="highlights section" id="destaques">
     <div class="container section-heading">
@@ -232,6 +240,19 @@
     </div>
   </div>
 </dialog>
+
+<div class="story-view" id="story" role="dialog" aria-modal="true" aria-label="Destaques" hidden>
+  <div class="story-stage" id="story-stage">
+    <div class="story-bars" id="story-bars"></div>
+    <div class="story-head">
+      <img class="story-avatar" id="story-avatar" alt="" width="40" height="40">
+      <b id="story-title"></b>
+      <button class="sv-close" id="story-close" type="button" aria-label="Fechar">×</button>
+    </div>
+    <img class="story-img" id="story-img" alt="">
+    <a class="story-cta button primary" id="story-cta" target="_blank" rel="noopener noreferrer"></a>
+  </div>
+</div>
 
 <canvas id="fx" aria-hidden="true"></canvas>
 <canvas id="bg-sprinkles" aria-hidden="true"></canvas>
