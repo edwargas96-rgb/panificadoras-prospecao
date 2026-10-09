@@ -416,7 +416,16 @@ h2 em, h1 em { font-family: var(--script); font-style: normal; color: var(--rose
   .hero h1 .line > span { transform: none; }
   .js .reveal { opacity: 1; transform: none; }
 }
-@media (max-width: 520px) { .header .brand-name small { display: none; } .header .brand-name { font-size: 36px; } }
+.header .brand-name { font-size: 40px; }
+.header .brand-name small { margin-top: 4px; letter-spacing: .2em; }
+@media (max-width: 520px) {
+  .header { gap: 10px; }
+  .header .brand { gap: 8px; }
+  .header .brand img { width: 46px; height: 46px; }
+  .header .brand-name { font-size: 36px; }
+  .header .brand-name small { font-size: 7.5px; letter-spacing: .1em; margin-top: 3px; }
+  .menu-toggle { padding: 0 12px; }
+}
 
 /* Nossa história */
 .story-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
