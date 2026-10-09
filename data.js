@@ -1,6 +1,6 @@
 /*
   Dados do site da Panificadora Gustapão (DEMO).
-  Cardápio tirado do iFood deles (Padaria, Doces e os Salgados mais pedidos).
+  Cardápio tirado do iFood deles (Lanches, Sanduíches, Tapioca, Padaria, Doces, Queijos e frios e Salgados).
   Enquanto a lista de produtos estiver vazia, o site mostra o botão para o iFood.
 
   Para preencher: add(categoria, grupo, unidade, [[nome, preço, descrição?], ...])
@@ -80,15 +80,101 @@
     ["Pastel de carne", 19.90]
   ]);
 
+  /* ---------- Queijos e frios ---------- */
+  add("frios", "", "unidade", [
+    ["Queijo Mussarela, 100 g", 9.90, "100 g de queijo mussarela fatiado."],
+    ["Queijo Prato, 100 g", 12.60],
+    ["Presunto, 100 g", 6.90, "100 g de presunto fatiado da Frimesa."],
+    ["Mortadela Defumada, 100 g", 6.30, "100 g de mortadela defumada fatia da Sadia."],
+    ["Mortadela Tradicional, 100 g", 6.30, "100 g de mortadela tradicional Bolognella fatia da Perdigão."],
+    ["Peito de Peru, 100 g", 15.00, "100 g de peito de peru defumado fatiado da Seara."],
+    ["Salame Italiano, 100 g", 19.00, "100 g de salame italiano fatiado da Sadia."],
+    ["Manteiga Extra Frimesa com Sal, 200 g", 19.90, "Pote de 200 g."]
+  ]);
+
+  /* ---------- Sanduíches ---------- */
+  add("sanduiches", "", "unidade", [
+    ["Americaninho", 22.40, "Pão francês, ovo, bacon, queijo e maionese."],
+    ["Bauru", 15.40, "Queijo, presunto, tomate e orégano derretido na chapa, com pão crocante."],
+    ["Misto Quente", 12.90, "Tradicional pão francês com queijo e presunto na chapa."],
+    ["Pão com Frango", 20.90, "Pão francês com frango desfiado e queijo muçarela. Feito na chapa."],
+    ["Pão com Linguiça Blumenau", 24.70, "Pão francês com linguiça Blumenau, queijo derretido e maionese."],
+    ["Pão com Manteiga na Chapa", 8.00, "Pão francês com manteiga feito na chapa."],
+    ["Pão com Mortadela Defumada", 11.90, "Pão francês com mortadela defumada. Feito na chapa."],
+    ["Pão com Ovo", 9.70, "Pão francês com ovo. Feito na chapa."],
+    ["Pão com Peito de Peru", 20.90, "Pão francês, peito de peru e queijo muçarela. Feito na chapa."],
+    ["Pão com Salame e Queijo", 23.80, "Pão francês, salame e queijo muçarela. Feito na chapa."]
+  ]);
+
+  /* ---------- Lanches ---------- */
+  add("lanches", "Lanches", "unidade", [
+    ["Beirute", 37.90, "Pão sírio, bife, ovo, queijo, presunto, alface, tomate e maionese."],
+    ["X-Salada", 23.90, "Nosso tradicional X-salada de padaria. Pão macio, hambúrguer, maionese, queijo, presunto, alface e tomate."],
+    ["Pão com bife", 26.60, "Tradicional pão francês com bife acebolado e queijo muçarela. Feito na chapa."],
+    ["X-Americano", 44.90, "Pão fresquinho, hambúrguer, ovo, queijo, presunto e bacon crocante, com batata frita."],
+    ["Hotdog na Chapa - Crocante", 26.60, "Pão macio com vina (salsicha), queijo, bacon, cheddar cremoso, batata palha e cebola crocante."],
+    ["Hotdog na Chapa - Tradicional", 23.80, "Pão macio com vina (salsicha), cebola e tomate na chapa, queijo, batata palha e maionese."],
+    ["Hotdog na Chapa - Banoffe", 19.60, "Pão macio com banana na chapa, doce de leite e canela."],
+    ["X-Bacon", 30.80, "Pão, hambúrguer, maionese, queijo, presunto, alface, tomate e bacon."],
+    ["X-Burguer", 22.40, "Pão macio, hambúrguer, maionese, queijo e presunto."],
+    ["X-Egg", 28.10, "Pão, hambúrguer, maionese, queijo, presunto, alface, tomate e ovo."],
+    ["X-Calabresa", 30.90, "Pão, hambúrguer, maionese, queijo, presunto, alface, tomate e calabresa."],
+    ["X-Frango", 25.20, "Pão, hambúrguer de frango, queijo, maionese, presunto, alface e tomate."],
+    ["X-Tudo! Tudo mesmo!", 42.10, "Pão, hambúrguer, bacon, calabresa, vina (salsicha), ovo, presunto e queijo."],
+    ["X-Salada no Pão de Queijo Grande", 36.50, "X-salada feito no nosso tradicional pão de queijo grande."],
+    ["Pão com Bolinho e Bacon", 32.30, "Pão, bolinho de carne com tempero da casa, queijo derretido, maionese e bacon."],
+    ["Pão com Bolinho, Requeijão e Cebola", 32.30, "Pão, bolinho de carne com tempero da casa, queijo derretido, requeijão e cebola crocante."],
+    ["Pão com Bolinho", 28.00, "Pão, bolinho de carne com tempero da casa e queijo derretido."]
+  ]);
+  add("lanches", "Lanches especiais", "unidade", [
+    ["Gusta Artesanal", 51.90, "Pão, hambúrguer artesanal, queijo cheddar, anéis de cebola e molho barbecue, com batata rústica."],
+    ["Gusta Burguer", 43.90, "Pão especial, hambúrguer artesanal, queijo coalho tostado e geleia de frutas."],
+    ["Gusta Bacon", 51.90, "Pão especial, hambúrguer artesanal, bacon, maionese, queijo e presunto."]
+  ]);
+  add("lanches", "Combos", "unidade", [
+    ["Combo 1: X-Salada + Batata Frita + Coca Cola", 39.90, "1 X-Salada: pão, hambúrguer, queijo, presunto, alface, tomate e maionese, com batata frita e Coca-Cola."],
+    ["Combo 2: X-Bacon + Batata Frita + Coca Cola", 43.90, "1 X-Bacon: pão, hambúrguer, queijo, presunto, alface, tomate e maionese, com batata frita e Coca-Cola."]
+  ]);
+
+  /* ---------- Tapioca ---------- */
+  add("tapioca", "", "unidade", [
+    ["Tapioca de manteiga", 22.50, "Tapioca recheada de manteiga, serve 1 pessoa."],
+    ["Tapioca de Frango com Catupiry", 29.90, "Tapioca recheada de frango com Catupiry, serve 1 pessoa."],
+    ["Tapioca de queijo e presunto", 26.80, "Tapioca recheada de queijo mussarela e presunto, serve 1 pessoa."],
+    ["Tapioca Light", 33.80, "Tapioca recheada de queijo branco e peito de peru, serve 1 pessoa."],
+    ["Tapioca de ovo mexido", 26.80, "Tapioca recheada de ovo mexido, serve 1 pessoa."],
+    ["Tapioca de Banana", 26.80, "Tapioca recheada com banana e doce de leite, serve 1 pessoa."],
+    ["Tapioca de Nutella", 38.10, "Tapioca recheada da Original Nutella, serve para 1 pessoa."]
+  ]);
+
   window.SITE_DATA = {
     whatsapp: "5541998176487",
     categories: [
+      { id: "lanches", label: "Lanches", singular: "Lanche", note: "Lanches, lanches especiais e combos." },
+      { id: "sanduiches", label: "Sanduíches", singular: "Sanduíche", note: "Pão francês na chapa, com os recheios que você gosta." },
+      { id: "tapioca", label: "Tapioca", singular: "Tapioca", note: "Cada tapioca serve 1 pessoa." },
       { id: "padaria", label: "Padaria", singular: "Pão", note: "Pães, chineques, panetone e mais, com fornadas frescas o dia todo." },
       { id: "doces", label: "Doces", singular: "Doce", note: "Doces, fatias e bolos." },
+      { id: "frios", label: "Queijos e frios", singular: "Frio", note: "Fatiados na hora, por 100 g." },
       { id: "salgados", label: "Salgados", singular: "Salgado", note: "Os salgados mais pedidos." }
     ],
-    featured: [],
-    photos: [],
+
+    featured: [
+      "Pão com Bolinho e Bacon",
+      "Pão com Bolinho, Requeijão e Cebola",
+      "Hotdog na Chapa - Crocante",
+      "Hotdog na Chapa - Tradicional",
+      "Hotdog na Chapa - Banoffe"
+    ],
+
+    photos: [
+      "pao-com-bolinho-e-bacon",
+      "pao-com-bolinho-requeijao-e-cebola",
+      "hotdog-na-chapa-crocante",
+      "hotdog-na-chapa-tradicional",
+      "hotdog-na-chapa-banoffe"
+    ],
+
     products: products,
 
     // Destaques estilo stories do Instagram: cada grupo vira um círculo; ao tocar, abre a galeria.
