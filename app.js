@@ -453,7 +453,7 @@
   })();
 
   /* ---------- Granulado (canvas) ---------- */
-  var COLORS = ["#ee6f8f", "#4fc4ad", "#f0b429", "#8a5443", "#a58be8", "#f7a1b5"];
+  var COLORS = ["#8a5443", "#c89a6a", "#e0c39b", "#6b3a20", "#d97b9a", "#f3dcae"];
 
   function Field(canvas) {
     this.c = canvas;
