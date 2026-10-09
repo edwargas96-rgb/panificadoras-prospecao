@@ -38,10 +38,10 @@
   ]);
 
   add("bolos", "", "unidade", [
-    ["Bolo de chocolate", null, "Massa fofinha com cobertura de chocolate."],
-    ["Bolo de cenoura com chocolate", null],
-    ["Bolo de laranja", null],
-    ["Bolo de milho", null],
+    ["Naked Red Velvet com Morango e Chocolate", null, "Massa red velvet, creme de ninho, chocolate e morangos frescos."],
+    ["Red Velvet com Morangos e Creme", null, "Massa red velvet com creme, chocolate e morangos frescos."],
+    ["Naked Red Velvet com Creme e Morangos", null, "Camadas de red velvet, creme branco e morangos frescos."],
+    ["Dois Amores", null, "Chantilly com lascas de chocolate branco e chocolate ao leite."],
     ["Bolo decorado", null, "Sob encomenda, com recheio e decoração combinados pelo WhatsApp."]
   ]);
 
@@ -79,10 +79,20 @@
     ],
 
     // Vitrine da página inicial: só aparecem os itens que têm foto (nomes como na lista acima)
-    featured: [],
+    featured: [
+      "Naked Red Velvet com Morango e Chocolate",
+      "Dois Amores",
+      "Naked Red Velvet com Creme e Morangos",
+      "Red Velvet com Morangos e Creme"
+    ],
 
     // ids que já têm foto em assets/produtos/<id>.jpg
-    photos: [],
+    photos: [
+      "naked-red-velvet-com-morango-e-chocolate",
+      "red-velvet-com-morangos-e-creme",
+      "dois-amores",
+      "naked-red-velvet-com-creme-e-morangos"
+    ],
 
     products: products
   };
