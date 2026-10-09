@@ -46,6 +46,15 @@
         { src: "assets/destaques/lanches-3.jpg", alt: "Hotdog na chapa banoffe, com banana, canela e doce de leite" },
         { src: "assets/destaques/lanches-4.jpg", alt: "Hotdog na chapa crocante, com bacon, cebola crocante, queijo, vina, batata palha, cheddar e maionese" },
         { src: "assets/destaques/lanches-5.jpg", alt: "Hotdog na chapa tradicional, com batata palha, vina, queijo, tomate e cebola na chapa e maionese" }
+      ] },
+      { id: "bolos", label: "Bolos", cover: "assets/destaques/bolos-2.jpg",
+        cta: { label: "Encomendar pelo WhatsApp", href: "https://wa.me/5541998176487?text=Ol%C3%A1%2C%20Gustap%C3%A3o!%20Gostaria%20de%20fazer%20uma%20encomenda%20de%20bolo." },
+        items: [
+        { src: "assets/destaques/bolos-1.jpg", alt: "Bolo de morango com nata: morango, nata e suspiro" },
+        { src: "assets/destaques/bolos-2.jpg", alt: "Bolo de brigadeiro: brigadeiro de chocolate" },
+        { src: "assets/destaques/bolos-3.jpg", alt: "Bolo negresco: creme de brigadeiro branco e negresco" },
+        { src: "assets/destaques/bolos-4.jpg", alt: "Bolo de abacaxi com coco: creme de coco e creme chiffon com abacaxi em calda" },
+        { src: "assets/destaques/bolos-5.jpg", alt: "Bolo negresco com o aviso: faça a sua encomenda e deixe sua festa ainda melhor, 41 99817-6487" }
       ] }
     ]
   };

@@ -83,6 +83,8 @@
   function open(gi, from) {
     cur = groups[gi];
     opener = from || null;
+    var c = cur.cta || data.highlightsCta;
+    if (c) { cta.textContent = c.label; cta.href = c.href; cta.hidden = false; } else { cta.hidden = true; }
     title.textContent = cur.label;
     avatar.src = cur.cover || cur.items[0].src;
     buildBars();
