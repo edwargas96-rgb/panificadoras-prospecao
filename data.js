@@ -60,6 +60,13 @@
         { src: "assets/destaques/bebidas-1.jpg", alt: "Milkshake nos sabores chocolate, creme e caramelo, e morango" },
         { src: "assets/destaques/bebidas-2.jpg", alt: "Suco natural" },
         { src: "assets/destaques/bebidas-3.jpg", alt: "Cappuccino" }
+      ] },
+      { id: "carolinas", label: "Carolinas", items: [
+        { src: "assets/destaques/carolinas-1.jpg", alt: "Carolinas variadas: chocolate ao leite, chocolate branco, leite ninho, doce de leite e limão" },
+        { src: "assets/destaques/carolinas-2.jpg", alt: "Carolina de maracujá, com recheio de mousse de maracujá e cobertura de chocolate" },
+        { src: "assets/destaques/carolinas-3.jpg", alt: "Carolina de limão, com cobertura de chocolate branco e raspas de limão" },
+        { src: "assets/destaques/carolinas-4.jpg", alt: "Carolina de paçoca, com recheio de paçoca e cobertura de chocolate" },
+        { src: "assets/destaques/carolinas-5.jpg", alt: "Carolinas de leite ninho, doce de leite e chocolate branco" }
       ] }
     ]
   };
