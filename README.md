@@ -1,16 +1,10 @@
-# Panificadoras – Prospecção
+# Lari Panificadora e Confeitaria
 
-Site estático (HTML/CSS/JS, sem build) usado como demo para prospecção de panificadoras.
-Deploy na Vercel direto da raiz.
+Demo de site estático (HTML, CSS e JavaScript puros, sem build). Abra `index.html` ou publique a pasta como está.
+Mesma estrutura do site da Fernanda Lemos Doceria: cardápio com busca, pedido (carrinho) enviado por WhatsApp, encomendas e mapa.
 
-## Como funciona
-- `main`: template/demo base (hoje com o conteúdo da Panificadora Santtini).
-- `demo/<nome-da-padaria>`: uma branch por prospecto. A Vercel gera uma URL de preview por branch.
-- Se o cliente fechar: cria-se repo + projeto Vercel próprios a partir da branch dele.
-
-## Fotos
-Coloque as fotos em `assets/photos/` com estes nomes (JPG): `hero`, `paes`, `bolos`, `coffee-break`, `sopas`, `almoco`, `cafe-colonial`, `g1` a `g6`.
-Sem arquivo, o espaço mostra um placeholder.
-
-## Cores (em `styles.css`)
-Vermelho `#E3261B`, laranja `#F28C1B`, vinho `#3A0B08`, creme `#FBF3E8`.
+## Como atualizar
+- **Cardápio, preços e fotos:** `data.js`. Preço `null` aparece como "Sob consulta".
+- **Foto de produto:** salve em `assets/produtos/<id>.jpg` e coloque o id em `photos` no `data.js`.
+- **Número do WhatsApp:** campo `whatsapp` no `data.js` e os links `wa.me` no `index.html`.
+- **Logo:** `assets/logo.jpg`.
