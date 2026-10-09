@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Santtini">
+  <circle cx="50" cy="50" r="48" fill="#F28C1B"/>
+  <circle cx="50" cy="50" r="44" fill="#E3261B"/>
+  <path d="M63 24c-4-7-22-8-26 4-4 13 12 16 20 24 8 9 0 22-14 22-10 0-16-6-16-6" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  <path d="M50 14v72" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+</svg>
