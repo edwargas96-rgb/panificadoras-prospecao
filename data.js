@@ -1,7 +1,7 @@
 /*
   Dados do site da Panificadora Gustapão (DEMO).
-  O cardápio deles está só no iFood. Enquanto a lista abaixo estiver vazia,
-  o site mostra o botão para o cardápio no iFood.
+  Cardápio tirado do iFood deles (Padaria, Doces e os Salgados mais pedidos).
+  Enquanto a lista de produtos estiver vazia, o site mostra o botão para o iFood.
 
   Para preencher: add(categoria, grupo, unidade, [[nome, preço, descrição?], ...])
   - Preço null aparece como "Sob consulta".
@@ -27,10 +27,65 @@
     });
   }
 
+  /* ---------- Padaria ---------- */
+  add("padaria", "", "unidade", [
+    ["Pão francês, 5 unidades", 7.50, "5 unidades de pão francês crocante, fornadas frescas o dia todo."],
+    ["Pão de Queijo Mineirinho, 5 unidades", 9.50, "5 unidades de pão de queijo assado, marca Mineirinho."],
+    ["Pão de queijo grande", 13.50, "Delicioso pão de queijo, com aproximadamente 15 cm de diâmetro."],
+    ["Pão de Batata fatiado, 400 g", 18.90, "Pão de nata já fatiado, perfeito para o café da manhã ou lanche da tarde."],
+    ["Pão de Forma fatiado, 450 g", 18.90, "Pão de forma já fatiado, ideal para sanduíches e torradas."],
+    ["Pão Caseiro fatiado, 390 g", 18.90, "Pão caseiro fofinho, já fatiado, perfeito para o café da manhã ou lanche da tarde."],
+    ["Pão de Hambúrguer", 2.20, "Uma unidade de pão de hambúrguer."],
+    ["Pão de Hot Dog", 1.90, "Uma unidade de pão para cachorro quente."],
+    ["Pão de minuto", 5.90],
+    ["Pão de minuto com chocolate", 8.00, "Uma unidade."],
+    ["Chineque de creme com coco", 4.50, "Uma unidade."],
+    ["Chineque de farofa", 4.50, "Uma unidade."],
+    ["Chineque de Prestígio", 4.50, "Uma unidade."],
+    ["Chineque de creme com farofa", 4.50, "Uma unidade."],
+    ["Chocotone, 500 g", 33.00, "Nosso clássico chocotone com gotas de chocolate e massa macia."],
+    ["Panetone, 500 g", 31.90, "O tamanho é aproximado e pode variar para mais ou para menos."],
+    ["Pão Cuca, 250 g", 10.70, "Sabor disponível: creme, goiabada, doce de leite ou farofa."]
+  ]);
+
+  /* ---------- Doces ---------- */
+  add("doces", "Doces", "unidade", [
+    ["Camafeu", 15.50, "Doce de nozes, coberto com fondant."],
+    ["Brigadeiro", 13.90, "Brigadeiro de chocolate, aproximadamente 80 g, serve 1 pessoa."],
+    ["Doce Dois Amores", 13.90, "Trançado de brigadeiro branco e brigadeiro de chocolate."],
+    ["Carolina Doce", 5.50, "Sabores como doce de leite, creme chiffon, limão, chocolate e chocolate branco."],
+    ["Brownie", 14.00]
+  ]);
+  add("doces", "Fatias de bolo", "unidade", [
+    ["Fatia de Bolo de Cenoura com brigadeiro", 18.90, "Uma fatia de bolo de cenoura recheado e coberto com brigadeiro."],
+    ["Fatia de Bolo Dois Amores", 18.90]
+  ]);
+  add("doces", "Bolos", "unidade", [
+    ["Bolo Especiarias com Brigadeiro Branco, 350 g", 32.90, "Bolo com especiarias: canela, cravo e noz moscada, coberto com brigadeiro branco."],
+    ["Bolo de Castanha, 270 g", 23.30, "Bolo de baunilha recheado e coberto com castanhas."],
+    ["Bolo de Cenoura com Chocolate, 350 g", 22.90, "Bolo fresquinho de cenoura com chocolate."],
+    ["Bolo Toalha Felpuda, 500 g", 36.00, "Bolo feito com leite de coco, coberto com calda de leite condensado."],
+    ["Bolo de Laranja, 290 g", 19.00, "Bolo de laranja, feito com suco de laranja natural."],
+    ["Bolo de Limão, 330 g", 21.50, "Bolo de limão, feito com suco natural de limão, coberto com mousse e raspas."],
+    ["Bolo de Fubá com Goiabada, 220 g", 16.00, "Bolo de fubá com goiabada cremosa. Bolo na forminha de alumínio."],
+    ["Bolo de Chocolate, 350 g", 23.40, "Bolo de chocolate úmido coberto com calda cremosa de chocolate."],
+    ["Bolo de Maracujá, 290 g", 20.26, "Bolo fresquinho de maracujá coberto com mousse de maracujá."]
+  ]);
+
+  /* ---------- Salgados (itens mais pedidos) ---------- */
+  add("salgados", "", "unidade", [
+    ["Mini Coxinhas no Copo, 40 unidades", 26.50],
+    ["Mini Pastelzinho de Carne, 15 unidades", 26.00],
+    ["Mini Pastelzinho de Queijo, 15 unidades", 26.00],
+    ["Pastel de carne", 19.90]
+  ]);
+
   window.SITE_DATA = {
-    whatsapp: "554132673520",
+    whatsapp: "5541998176487",
     categories: [
-      { id: "cardapio", label: "Cardápio", singular: "Item", note: "" }
+      { id: "padaria", label: "Padaria", singular: "Pão", note: "Pães, chineques, panetone e mais, com fornadas frescas o dia todo." },
+      { id: "doces", label: "Doces", singular: "Doce", note: "Doces, fatias e bolos." },
+      { id: "salgados", label: "Salgados", singular: "Salgado", note: "Os salgados mais pedidos." }
     ],
     featured: [],
     photos: [],
