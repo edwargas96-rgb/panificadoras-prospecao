@@ -511,3 +511,14 @@ h2 em, h1 em { font-family: var(--script); font-style: normal; color: var(--rose
 .story-cta { position: absolute; z-index: 3; left: 50%; bottom: 22px; transform: translateX(-50%); white-space: nowrap; box-shadow: none; }
 .story-cta:hover { transform: translateX(-50%); box-shadow: none; }
 @media (max-width: 600px) { .hl-ring { width: 82px; height: 82px; } .hl-row { gap: 18px; } .story-stage { height: 100dvh; width: 100vw; } }
+
+/* Gustapão: botões e faixa nas cores da logo (vinho e vermelho); dourado só como detalhe */
+.button.primary { background: var(--rose); color: #fff; }
+.button.primary:hover { background: var(--wine); }
+.occasion .button.primary { background: var(--rose); color: #fff; border-color: var(--peach); box-shadow: 4px 4px 0 var(--gold); }
+.ribbon { background: var(--wine); color: var(--peach); }
+.ribbon svg { fill: var(--gold); }
+.add { background: var(--rose); color: #fff; }
+.add.in { background: var(--gold); color: var(--choc); }
+.story-cta.button.primary { background: var(--rose); color: #fff; }
+.step-n { background: var(--rose); color: #fff; }
