@@ -522,3 +522,107 @@ h2 em, h1 em { font-family: var(--script); font-style: normal; color: var(--rose
 .add.in { background: var(--gold); color: var(--choc); }
 .story-cta.button.primary { background: var(--rose); color: #fff; }
 .step-n { background: var(--rose); color: #fff; }
+
+/* ===== Gustapão: versão forte (preto, vermelho e creme) ===== */
+@font-face { font-family: "Anton"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/anton.woff2") format("woff2"); }
+:root {
+  --display: "Anton", "Arial Narrow", Impact, sans-serif;
+  --script: "Anton", "Arial Narrow", Impact, sans-serif;
+  --rose: #d3141e; --wine: #a30f18; --pink: #d3141e; --pink-l: #e9c28f;
+  --choc: #140c0c; --choc-2: #5b4a47;
+  --peach: #f3eee6; --paper: #fbf8f3; --blush: #e8dfd2; --butter: #f1e3d3;
+  --teal: #1a0b0c; --teal-d: #7a0b12; --gold: #d9a864;
+  --hard: 4px 4px 0 #140c0c;
+}
+body { background: var(--peach); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: .02em; line-height: 1.04; }
+h2 em, h1 em { font-family: var(--display); font-style: normal; color: var(--rose); font-size: 1em; line-height: inherit; letter-spacing: .02em; }
+.eyebrow { color: var(--rose); letter-spacing: .24em; font-weight: 700; }
+.topline { background: var(--rose); color: #fff; }
+.topline span { font-family: var(--display); letter-spacing: .1em; font-size: 13px; text-transform: uppercase; color: #fff; opacity: .92; }
+.header { background: #140c0c; border-bottom: 4px solid var(--rose); color: #fff; backdrop-filter: none; }
+.header .brand img { border-radius: 8px; border: 2px solid #fff; background: #fff; width: 56px; height: 46px; object-fit: contain; padding: 2px; }
+.brand-name { font-family: var(--display); font-size: 30px; letter-spacing: .06em; line-height: 1; color: #fff; }
+.header .brand-name small { color: var(--pink-l); letter-spacing: .3em; font-size: 9px; margin-top: 4px; }
+#navigation a { color: #fff; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; background-image: linear-gradient(var(--rose), var(--rose)); }
+.cart-btn, .menu-toggle { background: transparent; color: #fff; border: 2px solid #fff; border-radius: 6px; box-shadow: none; }
+.cart-btn:hover { background: var(--rose); border-color: var(--rose); }
+.cart-count, .floating-cart b { background: var(--rose); color: #fff; }
+.button { border-radius: 6px; text-transform: uppercase; letter-spacing: .1em; font-size: 14px; font-weight: 700; box-shadow: 4px 4px 0 #140c0c; }
+.button.primary { background: var(--rose); color: #fff; border-color: #140c0c; }
+.button.primary:hover { background: var(--wine); }
+.hero2-sign, .tabs button, .add, .search input { border-radius: 6px; }
+.text-link { text-decoration-color: var(--rose); }
+
+/* abertura: preta, com a logo reta e centralizada na própria placa */
+.hero { background: #140c0c; color: #fff; padding: 64px 0 88px; border-bottom: 6px solid var(--rose); }
+.hero::before { background: radial-gradient(circle, rgba(211, 20, 30, .28), transparent 66%); }
+.hero h1 { font-size: clamp(52px, 7.2vw, 108px); line-height: .98; letter-spacing: .015em; color: #fff; margin-bottom: 26px; }
+.hero h1 em { color: var(--rose); }
+.hero .eyebrow { color: var(--pink-l); }
+.intro { color: #e7ddd2; }
+.hero .text-link { color: #fff; text-decoration-color: var(--rose); }
+.hero .now-chip { background: transparent; color: #fff; border: 2px solid #fff; border-radius: 6px; box-shadow: none; }
+.hero .now-dot { background: var(--rose); }
+.hero-art { display: grid; place-items: center; padding: 0; width: min(100%, 460px); }
+.logo-card { transform: none !important; animation: none; width: 100%; aspect-ratio: auto; padding: 28px 22px; border: 0; border-radius: 10px; background: #fff; box-shadow: 10px 10px 0 var(--rose); }
+.logo-card img { width: 100%; height: auto; object-fit: contain; }
+.sticker { background: var(--rose); border-color: #fff; box-shadow: none; left: -22px; bottom: -18px; }
+.sticker text { fill: #fff; }
+.sticker-heart { fill: #fff; }
+.ribbon { background: var(--rose); border-block: 0; }
+.ribbon span { font-family: var(--display); letter-spacing: .08em; text-transform: uppercase; color: #fff; font-size: 26px; }
+.ribbon svg { fill: #140c0c; }
+
+/* destaques: centralizados */
+.hl-section { background: #140c0c; border-bottom: 0; color: #fff; padding: 40px 0 12px; }
+.hl-section .eyebrow { text-align: center; color: var(--pink-l); }
+.hl-row { justify-content: center; flex-wrap: wrap; row-gap: 20px; overflow: visible; gap: 34px; }
+.hl-item { color: #fff; }
+.hl-ring { background: conic-gradient(var(--rose), #fff, var(--rose)); width: 104px; height: 104px; }
+.hl-ring img { border-color: #140c0c; }
+.hl-label { text-transform: uppercase; letter-spacing: .12em; font-size: 12.5px; font-weight: 700; }
+@media (max-width: 700px) { .hl-row { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; gap: 18px; } .hl-ring { width: 84px; height: 84px; } .hl-section .eyebrow { text-align: left; } }
+
+/* corpo: cartões retos, cardápio mais firme */
+.fcard, .card, .day, .fallback-card, .visit-card, .info div { border-radius: 8px; }
+.fcard { box-shadow: 5px 5px 0 #140c0c; }
+.price { font-family: var(--display); letter-spacing: .02em; color: var(--rose); }
+.group-title { font-family: var(--display); font-size: 28px; letter-spacing: .04em; text-transform: uppercase; color: var(--rose); margin-top: 34px; }
+.tabs button { font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: 13px; }
+.tabs button[aria-pressed="true"] { background: var(--rose); border-color: #140c0c; color: #fff; }
+.add { background: var(--rose); color: #fff; box-shadow: 2px 2px 0 #140c0c; }
+.occasion { background: #140c0c; }
+.occasion h2, .occasion .lead { color: #fff; }
+.occasion h2 em { color: var(--rose); }
+.step-n { background: var(--rose); color: #fff; border-color: #fff; border-radius: 6px; }
+.lunch { background: #1a0b0c; border-bottom: 6px solid var(--rose); }
+.lunch h2 { color: #fff; }
+.lunch .eyebrow { color: var(--pink-l); }
+.lunch h2 em { color: var(--rose); }
+.lunch .day { background: #fbf8f3; }
+.lunch .day.today { background: var(--rose); color: #fff; }
+.lunch .day.today .sides { color: #ffe3e3; }
+.lunch .day h3 { color: #140c0c; } .lunch .day.today h3 { color: #fff; }
+.visit { background: var(--blush); }
+.footer { background: #140c0c; border-top: 6px solid var(--rose); }
+.footer .brand-name { color: #fff; }
+.footer-inner > p { font-family: var(--display); letter-spacing: .08em; text-transform: uppercase; font-size: 20px; color: var(--pink-l); }
+.floating-wa { background: var(--rose); color: #fff; border-radius: 6px; text-transform: uppercase; letter-spacing: .08em; }
+.story-cta.button.primary { background: var(--rose); }
+.sv-close { border-radius: 6px; }
+@media (max-width: 900px) {
+  #navigation { background: #140c0c; border-bottom: 4px solid var(--rose); }
+  .hero { padding: 40px 0 64px; }
+  .hero h1 { font-size: clamp(48px, 13vw, 76px); }
+  .hero-art { width: min(100%, 360px); }
+  .brand-name { font-size: 24px; }
+}
+@media (max-width: 520px) { .header .brand-name { font-size: 24px; } .header .brand img { width: 50px; height: 42px; } }
+.ribbon svg { display: none; }
+.ribbon-group span + span::before { content: "■"; font-size: 12px; margin-right: 30px; color: #140c0c; vertical-align: middle; }
+.sticker-heart { display: none; }
+.sticker::after { content: "1994"; position: absolute; font-family: var(--display); font-size: 30px; letter-spacing: .04em; color: #fff; }
+.hero-art { width: min(100%, 400px); }
+.logo-card { padding: 22px 18px; }
+@media (max-width: 900px) { .hero-art { width: min(100%, 290px); margin: 8px auto 0; } .logo-card { padding: 16px 14px; box-shadow: 7px 7px 0 var(--rose); } }
