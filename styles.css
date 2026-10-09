@@ -417,3 +417,16 @@ h2 em, h1 em { font-family: var(--script); font-style: normal; color: var(--rose
   .js .reveal { opacity: 1; transform: none; }
 }
 @media (max-width: 520px) { .header .brand-name small { display: none; } .header .brand-name { font-size: 36px; } }
+
+/* Nossa história */
+.story-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.story .day { padding: 26px 26px 30px; }
+.story .day h3 { font-size: 32px; }
+.story .day .main { font-size: 19px; }
+.story .day .sides { font-size: 16px; line-height: 1.6; }
+.story-close { margin-top: 48px; text-align: center; color: #f3e3c9; max-width: 640px; margin-inline: auto; }
+.story-lead { font-family: var(--display); font-size: clamp(26px, 4vw, 38px); line-height: 1.1; color: #fff; margin-bottom: 14px; }
+.story-lead em { font-family: var(--script); font-style: normal; color: var(--butter); font-size: 1.28em; }
+.story-thanks { margin-top: 14px; font-weight: 700; color: var(--butter); }
+.story .lunch-footer p { display: block; }
+@media (max-width: 900px) { .story-grid { grid-template-columns: 1fr; } }
