@@ -55,6 +55,11 @@
         { src: "assets/destaques/bolos-3.jpg", alt: "Bolo negresco: creme de brigadeiro branco e negresco" },
         { src: "assets/destaques/bolos-4.jpg", alt: "Bolo de abacaxi com coco: creme de coco e creme chiffon com abacaxi em calda" },
         { src: "assets/destaques/bolos-5.jpg", alt: "Bolo negresco com o aviso: faça a sua encomenda e deixe sua festa ainda melhor, 41 99817-6487" }
+      ] },
+      { id: "bebidas", label: "Bebidas", items: [
+        { src: "assets/destaques/bebidas-1.jpg", alt: "Milkshake nos sabores chocolate, creme e caramelo, e morango" },
+        { src: "assets/destaques/bebidas-2.jpg", alt: "Suco natural" },
+        { src: "assets/destaques/bebidas-3.jpg", alt: "Cappuccino" }
       ] }
     ]
   };
