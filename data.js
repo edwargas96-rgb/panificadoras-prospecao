@@ -46,12 +46,9 @@
   ]);
 
   add("doces", "", "unidade", [
-    ["Torta de banana com creme", null],
-    ["Torta de limão", null],
-    ["Cupcake", null],
-    ["Brigadeiro", null],
-    ["Beijinho", null],
-    ["Pudim", null]
+    ["Brigadeiro Branco com Chocolate", null, "Brigadeiro branco passado no açúcar, com bico de brigadeiro de chocolate."],
+    ["Brigadeiro de Doce de Leite", null, "Brigadeiro passado no açúcar, com bico de doce de leite."],
+    ["Carolina com Chocolate", null, "Massa leve, recheio de creme e cobertura de chocolate."]
   ]);
 
   add("paes", "", "unidade", [
@@ -83,7 +80,10 @@
       "Naked Red Velvet com Morango e Chocolate",
       "Dois Amores",
       "Naked Red Velvet com Creme e Morangos",
-      "Red Velvet com Morangos e Creme"
+      "Red Velvet com Morangos e Creme",
+      "Carolina com Chocolate",
+      "Brigadeiro Branco com Chocolate",
+      "Brigadeiro de Doce de Leite"
     ],
 
     // ids que já têm foto em assets/produtos/<id>.jpg
@@ -91,7 +91,10 @@
       "naked-red-velvet-com-morango-e-chocolate",
       "red-velvet-com-morangos-e-creme",
       "dois-amores",
-      "naked-red-velvet-com-creme-e-morangos"
+      "naked-red-velvet-com-creme-e-morangos",
+      "brigadeiro-branco-com-chocolate",
+      "brigadeiro-de-doce-de-leite",
+      "carolina-com-chocolate"
     ],
 
     products: products
