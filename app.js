@@ -310,7 +310,7 @@
   function renderTabs() {
     tabs.textContent = "";
     data.categories.forEach(function (c) {
-      var b = el("button", "", c.label);
+      var b = el("button", c.promo ? "promo-tab" : "", c.label);
       b.type = "button";
       b.setAttribute("aria-pressed", String(!state.q && c.id === state.cat));
       b.addEventListener("click", function () {
@@ -351,6 +351,21 @@
     list.textContent = "";
     var cats = q ? data.categories : data.categories.filter(function (c) { return c.id === state.cat; });
     var total = 0;
+    var bn = !q && catById[state.cat].banner;
+    if (bn) {
+      var promo = el("article", "promo");
+      var pimg = el("img");
+      pimg.src = bn.img; pimg.alt = bn.alt; pimg.loading = "lazy";
+      var pbody = el("div", "promo-body");
+      pbody.appendChild(el("p", "eyebrow", bn.kicker));
+      pbody.appendChild(el("h3", "", bn.title));
+      bn.lines.forEach(function (t) { pbody.appendChild(el("p", "", t)); });
+      var pa = el("a", "button primary", bn.cta);
+      pa.href = waLink(bn.message); pa.target = "_blank"; pa.rel = "noopener noreferrer";
+      pbody.appendChild(pa);
+      promo.appendChild(pimg); promo.appendChild(pbody);
+      list.appendChild(promo);
+    }
     cats.forEach(function (cat) {
       var items = data.products.filter(function (p) {
         return p.cat === cat.id && (!q || norm(p.name + " " + (p.desc || "")).indexOf(q) !== -1);

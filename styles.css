@@ -430,3 +430,13 @@ h2 em, h1 em { font-family: var(--script); font-style: normal; color: var(--rose
 .story-thanks { margin-top: 14px; font-weight: 700; color: var(--butter); }
 .story .lunch-footer p { display: block; }
 @media (max-width: 900px) { .story-grid { grid-template-columns: 1fr; } }
+
+/* Sexta do Pastel */
+.tabs button.promo-tab { background: var(--butter); }
+.tabs button.promo-tab[aria-pressed="true"] { background: var(--rose); color: #fff; border-color: var(--choc); }
+.promo { display: grid; grid-template-columns: minmax(0, 300px) 1fr; gap: 32px; align-items: center; margin-bottom: 36px; padding: 20px; background: var(--paper); border: 2px solid var(--choc); border-radius: 26px; box-shadow: var(--hard); }
+.promo img { width: 100%; border-radius: 18px; border: 2px solid var(--choc); }
+.promo-body h3 { font-size: clamp(30px, 4.5vw, 46px); margin-bottom: 12px; }
+.promo-body p:not(.eyebrow) { color: var(--choc-2); margin-bottom: 6px; }
+.promo-body .button { margin-top: 16px; }
+@media (max-width: 700px) { .promo { grid-template-columns: 1fr; gap: 18px; } .promo img { max-width: 320px; margin-inline: auto; } }
