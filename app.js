@@ -62,32 +62,33 @@
   if (year) year.textContent = new Date().getFullYear();
 
   /* ---------- Aberto agora ---------- */
+  if (!data.products.length) document.documentElement.classList.add("no-menu");
   (function renderToday() {
     var t = $("#today-text");
     var now = new Date();
     var dow = now.getDay();
     var h = now.getHours() + now.getMinutes() / 60;
-    var open = dow === 0 ? 8 : 7;
-    var close = dow === 0 ? 12 : 19;
+    var open = 6.5;
+    var close = dow >= 1 && dow <= 5 ? 22 : 20;
     t.textContent = "";
     if (h >= open && h < close) {
       t.appendChild(el("b", "", "Aberto agora"));
       t.appendChild(document.createTextNode(" · até às " + close + "h"));
     } else {
-      t.appendChild(document.createTextNode("Segunda a sábado, 7h às 19h · domingo, 8h às 12h"));
+      t.appendChild(document.createTextNode("Seg. a sex., 6h30 às 22h · sáb. e dom., até 20h"));
     }
   })();
 
   /* ---------- Pedido (carrinho) ---------- */
   var basket = new Map();
   try {
-    JSON.parse(localStorage.getItem("lari-basket") || "[]").forEach(function (pair) {
+    JSON.parse(localStorage.getItem("gustapao-basket") || "[]").forEach(function (pair) {
       if (byId[pair[0]] && pair[1] > 0) basket.set(pair[0], pair[1]);
     });
   } catch (e) { /* sem armazenamento: segue sem salvar */ }
 
   function persist() {
-    try { localStorage.setItem("lari-basket", JSON.stringify(Array.from(basket.entries()))); } catch (e) { /* ignora */ }
+    try { localStorage.setItem("gustapao-basket", JSON.stringify(Array.from(basket.entries()))); } catch (e) { /* ignora */ }
   }
   function stepOf(p) { return p.unit === "unidade" ? 1 : 0.5; }
   function unitWord(p, q) {
@@ -110,7 +111,7 @@
   var order = { date: "", notes: "" };
 
   function buildMessage() {
-    var lines = ["Olá, Lari! Gostaria de fazer um pedido:", ""];
+    var lines = ["Olá, Gustapão! Gostaria de fazer um pedido:", ""];
     basket.forEach(function (q, id) {
       var p = byId[id];
       var price = p.price != null ? " (" + fmt(p.price) + "/" + unitShort(p) + ")" : " (sob consulta)";
@@ -522,7 +523,7 @@
   })();
 
   /* ---------- Granulado (canvas) ---------- */
-  var COLORS = ["#8a5443", "#c89a6a", "#e0c39b", "#6b3a20", "#d97b9a", "#f3dcae"];
+  var COLORS = ["#580b0e", "#b3202f", "#d9a864", "#f7dcc9", "#6e1218", "#f1d3a6"];
 
   function Field(canvas) {
     this.c = canvas;
