@@ -52,19 +52,6 @@
     ["Carolina com Chocolate", null, "Massa leve, recheio de creme e cobertura de chocolate."]
   ]);
 
-  add("paes", "", "unidade", [
-    ["Pão francês", null, "Fresquinho, saindo do forno."],
-    ["Pão de forma", null],
-    ["Pão de leite", null],
-    ["Cuca", null]
-  ]);
-
-  add("cafe", "", "unidade", [
-    ["Café coado", null, "Café fresquinho."],
-    ["Cappuccino", null],
-    ["Pão na chapa", null]
-  ]);
-
   window.SITE_DATA = {
     whatsapp: "554133644702",
 
@@ -82,8 +69,6 @@
         } },
       { id: "bolos", label: "Bolos", singular: "Bolo", note: "Bolos do dia a dia e decorados sob encomenda. Valores e decoração combinados pelo WhatsApp." },
       { id: "doces", label: "Doces", singular: "Doce", note: "Tortas, doces e sobremesas feitos com carinho." },
-      { id: "paes", label: "Pães", singular: "Pão", note: "Pães fresquinhos para o café da manhã e o dia a dia." },
-      { id: "cafe", label: "Café", singular: "Café", note: "Café fresquinho e lanches para uma pausa gostosa." }
     ],
 
     // Vitrine da página inicial: só aparecem os itens que têm foto (nomes como na lista acima)
