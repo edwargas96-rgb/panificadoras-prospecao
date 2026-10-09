@@ -626,21 +626,3 @@ h2 em, h1 em { font-family: var(--display); font-style: normal; color: var(--ros
 .hero-art { width: min(100%, 400px); }
 .logo-card { padding: 22px 18px; }
 @media (max-width: 900px) { .hero-art { width: min(100%, 290px); margin: 8px auto 0; } .logo-card { padding: 16px 14px; box-shadow: 7px 7px 0 var(--rose); } }
-
-/* A: abertura em vermelho forte */
-.hero { background: #c8101a; border-bottom: 6px solid #140c0c; }
-.hero::before { display: none; }
-.hero h1 em { color: #140c0c; }
-.hero .eyebrow { color: #fff; opacity: .9; }
-.intro { color: #fff; }
-.hero .button.primary { background: #fff; color: #c8101a; border-color: #140c0c; }
-.hero .button.primary:hover { background: #140c0c; color: #fff; }
-.hero .now-dot { background: #fff; }
-.logo-card { box-shadow: 10px 10px 0 #140c0c; }
-.sticker { background: #140c0c; border-color: #fff; }
-.hero .text-link { text-decoration-color: #140c0c; }
-.ribbon { background: #140c0c; }
-.ribbon svg { display:none; }
-.ribbon-group span + span::before { color: #c8101a; }
-.hl-section { background: #1d1818; }
-@media (max-width: 900px) { .logo-card { box-shadow: 7px 7px 0 #140c0c; } }
