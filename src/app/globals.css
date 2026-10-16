@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #14100e;
+  --color-ink-2: #1f1a17;
+  --color-peach: #f4efe6;
+  --color-paper: #fbf8f3;
+  --color-sand: #e9dfd0;
+  --color-kraft: #c8a47a;
+  --color-kraft-d: #8a5a33;
+  --color-wine: #5b4026;
+  --color-mute: #6f655b;
+  --font-sans: var(--font-bricolage), system-ui, sans-serif;
+  --font-display: var(--font-caprasimo), Georgia, serif;
+  --font-script: var(--font-yellowtail), "Brush Script MT", cursive;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  background: var(--color-peach);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+:focus-visible { outline: 3px solid var(--color-kraft-d); outline-offset: 3px; }
+::selection { background: var(--color-kraft); color: var(--color-ink); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+  padding: .85rem 1.5rem; border: 2px solid var(--color-ink); border-radius: .5rem;
+  font-weight: 700; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+  transition: transform .15s, box-shadow .15s, background .15s; cursor: pointer; line-height: 1.1;
+}
+.btn:active { transform: translate(2px, 2px); }
+.btn-kraft { background: var(--color-kraft); color: var(--color-ink); box-shadow: 4px 4px 0 var(--color-ink); }
+.btn-kraft:hover { background: #d8b68c; transform: translate(-1px, -1px); box-shadow: 6px 6px 0 var(--color-ink); }
+.btn-dark { background: var(--color-ink); color: var(--color-peach); }
+.btn-dark:hover { background: var(--color-wine); }
+.btn-line { border-color: currentColor; background: transparent; }
+.btn-line:hover { background: rgba(255,255,255,.12); }
+
+.eyebrow { font-size: .72rem; letter-spacing: .26em; text-transform: uppercase; font-weight: 700; color: var(--color-kraft-d); }
+
+/* esconde barra de rolagem de faixas horizontais */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+dialog#basket::backdrop { background: rgba(20, 16, 14, .6); backdrop-filter: blur(3px); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
